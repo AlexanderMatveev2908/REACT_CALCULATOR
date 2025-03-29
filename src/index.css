@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Sour Gummy";
+}
+
+body {
+  @apply bg-[#000] sm:pb-[200px] sm:pt-[100px] pt-[20px];
+}
+
+.btn__base {
+  @apply border-0 bg-transparent leading-[40px] tracking-[0px] font-[400] text-white rounded-[90px] transition-all duration-300 cursor-pointer outline-none;
+}
+.btn__base:active {
+  font-size: 25px;
+  transition: none;
+}
+
+.btn__1,
+.btn__2 {
+  @apply w-[80px] sm:w-[90px] h-[80px] sm:h-[90px] active:w-[70px] sm:active:w-[80px] active:h-[70px] sm:active:h-[80px];
+}
+.btn__2,
+.btn__3 {
+  @apply text-[30px];
+}
+
+.btn__1 {
+  @apply bg-[#FF9F03] hover:bg-[#FFBB4C] active:bg-[#FF9F03] text-[35px];
+}
+.btn__2 {
+  @apply bg-[#3A3A3C] hover:bg-[#626262] active:bg-[#3A3A3C];
+}
+.btn__3 {
+  @apply bg-[#3A3A3C] w-[175px] h-[80px] sm:w-[200px] sm:h-[90px] px-[35px] text-start hover:bg-[#626262] active:bg-[#3A3A3C] sm:active:w-[175px] sm:active:h-[80px] active:w-[150px] active:h-[70px] col-span-2;
+}
