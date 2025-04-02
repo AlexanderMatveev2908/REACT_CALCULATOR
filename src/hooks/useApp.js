@@ -7,6 +7,7 @@ const formatTxt = (txt) =>
 
 export const useApp = () => {
   const [textUser, setTextUser] = useState("0");
+  const [fsz, setFsz] = useState("text-[65px]");
   const [resMath, setResMath] = useState(null);
   const resRef = useRef(null);
 
@@ -33,6 +34,19 @@ export const useApp = () => {
     document.addEventListener("mousedown", listenMouseDown);
     return () => document.removeEventListener("mousedown", listenMouseDown);
   }, []);
+
+  useEffect(() => {
+    const handleFsz = () =>
+      setFsz(() =>
+        textUser.length < 10
+          ? "text-[65px]"
+          : textUser.length < 15
+          ? "text-[50px]"
+          : "text-[40px]"
+      );
+
+    handleFsz();
+  }, [textUser]);
 
   const handleToggleLastNum = () => {
     if (isNaN(textUser.at(-1)) || textUser === "0") return;
@@ -82,8 +96,8 @@ export const useApp = () => {
   };
 
   const handleChainStr = (val) => {
-    if (textUser.length >= 14 && window.innerWidth <= 640) {
-      alert("Exceeded 14 chars");
+    if (textUser.length >= 20) {
+      alert("Exceeded 20 chars");
       return;
     }
     setTextUser((prev) => {
@@ -164,6 +178,7 @@ export const useApp = () => {
   return {
     resMath,
     textUser,
+    fsz,
     handleShowRes,
     handleClear,
     handleChainStr,

@@ -34,3 +34,7 @@ body {
 .btn__3 {
   @apply bg-[#3A3A3C] w-[175px] h-[80px] sm:w-[200px] sm:h-[90px] px-[35px] text-start hover:bg-[#626262] active:bg-[#3A3A3C] sm:active:w-[175px] sm:active:h-[80px] active:w-[150px] active:h-[70px] col-span-2;
 }
+
+.hide_scrollbar::-webkit-scrollbar {
+  display: none;
+}
