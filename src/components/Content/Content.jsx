@@ -21,7 +21,7 @@ const Content = ({
   getRes,
 }) => {
   return (
-    <div className="w-full grid grid-cols-[3fr_1fr] gap-[15px] sm:gap-[20px]">
+    <div className="w-full place-content-center grid grid-cols-[3fr_1fr] gap-[15px] sm:gap-[20px]">
       {/* LEFT SIDE */}
       <div className="w-full grid grid-cols-3 place-items-center gap-[15px] sm:gap-[20px]">
         {fieldsLeftSide.map((el) => (
